@@ -1,0 +1,60 @@
+//  $b: "border";
+//  $c: "color";
+
+
+//  h2{
+//     box-sizing: #{$b}-box;
+//     #{$b}: 1px solid blue;
+//     #{$c}: red;
+//     background-#{$c}: green;
+//  }
+
+
+
+//  $colors: (
+//     1:red,
+//     2:green,
+//     3: blue,
+//     4: orange
+//  );
+
+
+//  @for $i from 1 through 4{
+//     .paragraph-#{$i}{
+//         background-color: map-get($colors, $i);
+//     }
+//  }
+
+
+// $colors: red green blue orange;
+
+// @each $color in $colors {
+//     .paragraph-#{$color}{
+//         background-color: $color;
+//     }
+// }
+
+
+// h1{
+//     @if(2<4){
+//         color: red;
+//     }
+// }
+
+@mixin headingSize($size){
+    @if($size == large){
+        font-size: 45px;
+    }
+
+    @else if($size == medium){
+        font-size: 30px;
+    }
+
+    @else{
+        font-size: 15px;
+    }
+}
+
+h1{
+    @include headingSize(small);
+}
